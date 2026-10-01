@@ -7,6 +7,12 @@
   overflow: hidden;
   border: solid 10px white;
 
+  @media screen and (max-width: var.$mobile) {
+    border-width: 5px;
+  }
+    
+  
+
   .hero-content {
     height: 100%;
     display: flex;
