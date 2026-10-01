@@ -1,0 +1,21 @@
+
+// BASE 
+@use "./base/variables.scss";
+@use "./base/defaults.scss";
+@use "./base/utilities.scss";
+@use "./base/mixins.scss";
+
+
+// COMPONENTS 
+@use "./components/button";
+@use "./components/navbar";
+@use "./components/footer";
+@use "./components/menu";
+
+
+// LAYOUT 
+@use "./layout/layout.scss";
+
+
+// PAGES 
+@use "./pages/home.scss";

@@ -1,0 +1,9 @@
+@use "../base/variables.scss" as var;
+@use "../base/mixins.scss" as mixin;
+
+
+.width-container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1800px;
+}

@@ -1,0 +1,70 @@
+@use "../base/variables.scss" as var;
+@use "../base/mixins.scss" as mixin;
+
+
+#navbar {
+    padding: 1.4rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transform: rotateY(-10px);
+    opacity: 0;
+    animation: navbar-entrance 1s cubic-bezier(0.8, 0.03, 0.2, 1) forwards;
+
+    @media screen and (max-width: var.$mobile) {
+       padding: .8rem 0;
+    }
+
+    .navbar-content {
+        width: 95%;
+        margin: 0 auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: var.$mobile) {
+            width: 90%;
+        }
+
+        .navbar__brand-logo {
+            font-size: 2rem;
+            font-family: var.$ff-heading;
+
+            @media screen and (max-width: var.$mobile) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .navbar__burger-icon {
+            height: 55px;
+            width: 55px;
+            border-radius: 100%;
+            border: solid 1px white;
+            @include mixin.flex-center;
+
+            &:hover {
+                background: var.$clr-primary;
+            }
+
+            @media screen and (max-width: var.$mobile) {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+
+
+@keyframes navbar-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

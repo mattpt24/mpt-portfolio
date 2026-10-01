@@ -1,0 +1,115 @@
+@use "../base/variables.scss" as var;
+@use "../base/mixins.scss" as mixin;
+
+#hero {
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  border: solid 10px white;
+
+  .hero-content {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    width: 95%;
+    margin: 0 auto;
+    z-index: 5;
+
+    @media screen and (max-width: var.$tablet) {
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+
+
+    .hero__heading {
+      font-size: clamp(
+        7vw,
+        5vw,
+        7rem
+      ); 
+      width: 12ch;
+      line-height: 1.1;
+
+      span {
+        display: inline-block;
+      }
+      
+
+      @media screen and (max-width: var.$tablet) {
+        font-size: 3.6rem;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      @media screen and (max-width: var.$mobile) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .hero__eyebrow {
+      font-size: clamp(1.1vw, 1.1vw, 1.1vw);
+      opacity: 0;
+      background: var.$clr-primary-darker;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      z-index: 10;
+      margin-bottom: 1rem;
+
+      transform: translateY(10px);
+      animation: hero-eyebrow-entrance .6s cubic-bezier(0.8, 0.03, 0.2, 1) forwards;
+
+      @media screen and (max-width: var.$tablet) {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto 1.2rem auto;
+      }
+      @media screen and (max-width: var.$mobile) {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding: .8rem 1.2rem;
+      }
+    }
+  }
+}
+
+
+
+
+.floating-box {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background: var.$clr-primary;
+    border-radius: 100%;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+    @media screen and (max-width: var.$tablet) {
+       width: 140px;
+       height: 140px;
+    }
+
+    @media screen and (max-width: var.$mobile) {
+       width: 100px;
+       height: 100px;
+    }
+}
+
+
+
+
+
+@keyframes hero-eyebrow-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
