@@ -1,2 +1,184 @@
 @use "../base/variables.scss" as var;
 @use "../base/mixins.scss" as mixin;
+
+
+
+#main-menu {
+    transition: all 1s cubic-bezier(0.8, 0.03, 0.2, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var.$clr-primary;
+    z-index: 999;
+    height: 100dvh;
+    width: 100%;
+    @include mixin.flex-center;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    
+
+    &.main-menu--active {
+        transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    .nav-links-container {
+        @include mixin.flex-center;
+        flex-direction: column;
+        text-align: center;
+
+        .nav-links {
+            list-style:none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            @media screen and (max-width: var.$mobile) {
+                gap: 1rem;
+            } 
+
+            .nav-link {
+                transition: all .3s ease;
+                line-height: 1;
+                overflow: hidden;
+
+                a {
+                    transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+                    font-family: var.$ff-heading;
+                    text-transform: uppercase;
+                    font-size: 5.5vw;
+                    display: inline-block;
+                    width:fit-content;
+                    transform: translateY(100%);
+                    position: relative;
+
+                    @media screen and (max-width: var.$tablet) {
+                        font-size: 4.5rem;
+                    } 
+                    @media screen and (max-width: var.$mobile) {
+                        font-size: 2.8rem;
+                    } 
+
+
+                    &.nav-link--entrance {
+                        transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+                        transform: translateY(0);
+                    }
+                    &.nav-link--exit {
+                        transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+                        transform: translateY(100%);
+                    }
+                    
+                }
+            }
+        }
+
+        ul:hover li {opacity: .3;color:transparent;filter: blur(4px);}
+        ul li:hover {opacity: 1;filter: blur(0);transform: scale(1.04);}
+    }
+
+
+
+    .main-menu-contact-links {
+        transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1) .6s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .8rem;
+        list-style: none;
+        margin-top: 5rem;
+        transform: translateY(10px);
+        opacity: 0;
+
+        @media screen and (max-width: var.$mobile) {
+            margin-top: 4rem;
+            gap: .4rem;
+        }
+
+        &.main-menu-contact-links--entrance {
+            transition: all 1s cubic-bezier(0.8, 0.03, 0.2, 1);
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .main-menu-contact-link a {
+            transition: all .3s ease;
+            font-family: var.$ff-heading;
+            font-size: 1vw;
+            background:rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.4rem;
+            border-radius: 50px;
+
+            @media screen and (max-width: var.$tablet) {
+                font-size: 1.1rem;
+            }
+            @media screen and (max-width: var.$mobile) {
+                font-size: .8rem;
+            }
+
+            &:hover {
+                background: black;
+            }
+        }
+    }
+
+
+    .main-menu__close-btn {
+        transition: all .2s cubic-bezier(0.8, 0.03, 0.2, 1);
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 65px;
+        height: 65px;
+        border-radius: 100%;
+        position: absolute;
+        background: black;
+        @include mixin.flex-center;
+        transform: scale(0);
+
+        @media screen and (max-width: var.$tablet) {
+            width: 60px;
+            height: 60px;
+        }
+        @media screen and (max-width: var.$mobile) {
+            width: 50px;
+            height: 50px;
+            top: .8rem;
+            right: .8rem;
+        }
+
+        &.main-menu__close-btn--active {
+            transition: all .4s cubic-bezier(0.8, 0.03, 0.2, 1) .3s;
+            transform: scale(1);
+        }
+
+        img {
+            width: 30px;
+        }
+    }
+}
+
+
+
+
+.main-menu-overlay {
+    transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: var.$clr-primary-darker;
+    z-index: 997;
+    pointer-events: none;
+    transform: translateY(-100%);
+
+    &.main-menu-overlay--entrance {
+        transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
+        transform: translateY(0);
+     }
+}
+

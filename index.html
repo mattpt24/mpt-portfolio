@@ -32,7 +32,7 @@
 
   </head>
 
-  <body>
+  <body class="preload">
 
 
 
@@ -40,21 +40,40 @@
     <!-- NAVBAR  -->
     <header id="navbar">
       <div class="navbar-content">
-        <!-- LOGO / HOME BUTTON  -->
         <a class="navbar__brand-logo" href="/" aria-label="Home">MPT</a>
-
-        <!-- BURGER ICON  -->
-        <button
-          class="navbar__burger-icon"
-          aria-label="Open Main Menu"
-          aria-expanded="false"
-          aria-controls="main-menu"
-        >
-          <img src="./src/assets/icons/burger.svg" aria-hidden="true" alt="" />
-        </button>
+        <button class="navbar__burger-icon" aria-label="Open Main Menu"  aria-expanded="false" aria-controls="main-menu">Menu</button>
       </div>
     </header>
 
+
+
+    <!-- MAIN MENU DROPDOWN  -->
+    <div id="main-menu">
+      <nav class="nav-links-container" aria-label="Main Menu">
+         <ul class="nav-links">
+              <li class="nav-link"><a href="/about">About</a></li>
+              <li class="nav-link"><a href="/about">Work</a></li>
+              <li class="nav-link"><a href="/about">Resume</a></li>
+              <li class="nav-link"><a href="/about">Contact</a></li>
+         </ul>
+      </nav>
+      <ul class="main-menu-contact-links">
+          <li class="main-menu-contact-link"><a href="https://www.linkedin.com/in/matt-persell-thompson-887903200" aria-label="LinkedIn profile" target="_blank" rel="noreferrer noopener">LinkedIn</a></li>
+          <li class="main-menu-contact-link"><a href="https://github.com/mattpt24" aria-label="Github profile" target="_blank" rel="noreferrer noopener">GitHub</a></li>
+          <li class="main-menu-contact-link"><a href="https://www.instagram.com/mattpt24" aria-label="Instagram profile" target="_blank" rel="noreferrer noopener">Instagram</a></li>
+      </ul>
+
+      <button class="main-menu__close-btn" aria-label="Close Main Menu" aria-controls="main-menu"><img src="./src/assets/icons/x-mark.svg" aria-hidden="true" alt=""></button>
+    </div>
+
+    <div class="main-menu-overlay"></div>
+
+
+
+
+    
+
+    <main>
 
 
 
@@ -75,6 +94,12 @@
       </div>
 
     </section>
+
+
+
+
+    </main>
+
 
 
 

@@ -30,6 +30,14 @@ body {
   color: white;
 }
 
+/* Disables all transitions globally while this class is present */
+body.preload *, 
+body.preload *::before, 
+body.preload *::after {
+    transition: none!important;
+}
+
+
 /* Only allow content to be seen by screen-readers */
 .sr-only {
   position: absolute;

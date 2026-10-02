@@ -3,18 +3,17 @@
 
 
 #navbar {
-    padding: 1.4rem 0;
+    padding: 2rem 0 1.4rem 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
-    transform: rotateY(-10px);
+    z-index: 90;
     opacity: 0;
     animation: navbar-entrance 1s cubic-bezier(0.8, 0.03, 0.2, 1) forwards;
 
     @media screen and (max-width: var.$mobile) {
-       padding: .8rem 0;
+       padding: 1.2rem 0 .8rem 0;
     }
 
     .navbar-content {
@@ -38,19 +37,24 @@
         }
 
         .navbar__burger-icon {
-            height: 55px;
-            width: 55px;
-            border-radius: 100%;
-            border: solid 1px white;
+            transition: all .3s ease;
+            border-radius: 50px;
+            padding: 1.2rem 1.6rem;
+            background: #222;
+            font-family: var.$ff-heading;
+            border: solid 1px #222;
+            font-size: 1.1rem;
+            color: white;
             @include mixin.flex-center;
 
             &:hover {
-                background: var.$clr-primary;
+                border-color: white;
+                transform: scale(1.05);
             }
 
-            @media screen and (max-width: var.$mobile) {
-                height: 50px;
-                width: 50px;
+            @media screen and (max-width: var.$tablet) {
+                padding: 1rem 1.2rem;
+                font-size: 1rem;
             }
         }
     }
