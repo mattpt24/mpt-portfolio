@@ -19,3 +19,6 @@ import "./main-menu";
 
 // INTERSECTION OBSERVER 
 import "./observer";
+
+
+import "./gsap";

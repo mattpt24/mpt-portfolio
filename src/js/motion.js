@@ -1,6 +1,6 @@
 import { animate, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@12.34.0/+esm";
 
-const headers = document.querySelectorAll(".hero__heading");
+const headers = document.querySelectorAll(".page-heading");
 
 headers.forEach((h1) => {
   // Split text into words, then split words into individual letter spans

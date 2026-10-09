@@ -71,6 +71,19 @@
                         transition: all .8s cubic-bezier(0.8, 0.03, 0.2, 1);
                         transform: translateY(100%);
                     }
+
+                    &.current-page {
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            background: var.$clr-primary-darker;
+                            height: 40px;
+                            z-index: -1;
+                        }
+                    }
                     
                 }
             }

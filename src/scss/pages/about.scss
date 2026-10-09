@@ -1,0 +1,155 @@
+@use "../base/variables.scss" as var;
+@use "../base/mixins.scss" as mixin;
+
+
+
+#about-hero {
+    padding: 10rem 0;
+    height: 100dvh;
+    @include mixin.flex-center;
+    text-align: center;
+    overflow: hidden;
+
+
+    .width-container {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+
+        .about-hero__img {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+
+            &.img-1 {
+                top: 0;
+                left: 0;
+                height: 15vw;
+                width: 20vw;
+
+                @media screen and (max-width: var.$laptop) {
+                    height: 13vw;
+                    width: 20vw;
+                }
+                @media screen and (max-width: var.$tablet) {
+                    height: 200px;
+                    width: 250px;
+                }
+                @media screen and (max-width: var.$mobile) {
+                    height: 120px;
+                    width: 170px;
+                }
+            }
+
+            &.img-2 {
+                top: 0;
+                right: 0;
+                width: 14vw;
+                height:20vw;
+                @media screen and (max-width: var.$tablet) {
+                    height: 300px;
+                    width: 150px;
+                }
+                @media screen and (max-width: var.$mobile) {
+                    height: 220px;
+                    width: 100px; 
+                    top: -4rem;
+                }
+            }
+
+            &.img-3 {
+                bottom:0rem;
+                left: 3rem;
+                height: 13vw;
+                width: 15vw;
+                @media screen and (max-width: var.$laptop) {
+                    bottom: -4rem;
+                }
+                @media screen and (max-width: var.$tablet) {
+                    height: 250px;
+                    width: 350px;
+                    bottom: -5rem;
+                }
+                @media screen and (max-width: var.$mobile) {
+                    height: 150px;
+                    width: 180px;
+                    left: 0;
+                    bottom: -1rem;
+                }
+            }
+
+            &.img-4 {
+                bottom: 3rem;
+                right: 0;
+                width: 9vw;
+                height: 11vw;
+                @media screen and (max-width: var.$laptop) {
+                    bottom: -2rem;
+                }
+                @media screen and (max-width: var.$tablet) {
+                    height: 200px;
+                    width: 200px;
+                    bottom: -5rem;
+                }
+                @media screen and (max-width: var.$mobile) {
+                    height: 180px;
+                    width: 120px;
+                    bottom: -4remrem;
+                }
+            }
+
+        }
+    }
+
+    
+    .about-hero-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 2rem;
+
+        .section-eyebrow {
+            font-size: 1.4vw;
+            @media screen and (max-width: var.$tablet) {
+                font-size: 1.4rem;
+            }
+            @media screen and (max-width: var.$mobile) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .about-hero-content__heading {
+      font-size: clamp(
+        6vw,
+        5vw,
+        7rem
+      ); 
+      width: 12ch;
+      line-height: 1.1;
+
+      span {
+        display: inline-block;
+      }
+      
+
+      @media screen and (max-width: var.$tablet) {
+        font-size: 4rem;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      @media screen and (max-width: var.$mobile) {
+        font-size: 3rem;
+      }
+    }
+    }
+}
