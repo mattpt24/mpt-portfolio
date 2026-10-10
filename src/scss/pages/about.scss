@@ -27,12 +27,19 @@
             object-fit: cover;
             object-position: center;
             border-radius: 14px;
+            
+            @media screen and (max-width: var.$mobile) {
+              animation:none!important;  
+            }
 
             &.img-1 {
                 top: 0;
                 left: 0;
                 height: 15vw;
                 width: 20vw;
+                opacity: 0;
+                opacity: 0;
+                animation: top-about-hero-image-entrance 1s ease forwards .1s;
 
                 @media screen and (max-width: var.$laptop) {
                     height: 13vw;
@@ -45,6 +52,7 @@
                 @media screen and (max-width: var.$mobile) {
                     height: 120px;
                     width: 170px;
+                    opacity:1;
                 }
             }
 
@@ -53,6 +61,9 @@
                 right: 0;
                 width: 14vw;
                 height:20vw;
+                opacity: 0;
+                animation: top-about-hero-image-entrance 1s ease forwards .3s;
+
                 @media screen and (max-width: var.$tablet) {
                     height: 300px;
                     width: 150px;
@@ -61,6 +72,7 @@
                     height: 220px;
                     width: 100px; 
                     top: -4rem;
+                    opacity:1;
                 }
             }
 
@@ -69,6 +81,9 @@
                 left: 3rem;
                 height: 13vw;
                 width: 15vw;
+                opacity: 0;
+                animation: bottom-about-hero-image-entrance 1s ease forwards .5s;
+
                 @media screen and (max-width: var.$laptop) {
                     bottom: -4rem;
                 }
@@ -82,6 +97,7 @@
                     width: 180px;
                     left: 0;
                     bottom: -1rem;
+                    opacity:1;
                 }
             }
 
@@ -90,6 +106,9 @@
                 right: 0;
                 width: 9vw;
                 height: 11vw;
+                opacity: 0;
+                animation: bottom-about-hero-image-entrance 1s ease forwards .7s;
+
                 @media screen and (max-width: var.$laptop) {
                     bottom: -2rem;
                 }
@@ -101,7 +120,8 @@
                 @media screen and (max-width: var.$mobile) {
                     height: 180px;
                     width: 120px;
-                    bottom: -4remrem;
+                    bottom: -4rem;
+                    opacity:1;
                 }
             }
 
@@ -115,8 +135,10 @@
         align-items: center;
         text-align: center;
         flex-direction: column;
-        margin-top: 2rem;
+        margin-top: 1rem;
         z-index: 10;
+        animation: heroFadeOut linear both;
+        animation-timeline: scroll(root);
 
         .section-eyebrow {
             font-size: 1.4vw;
@@ -154,3 +176,50 @@
     }
     }
 }
+
+
+
+
+// HAD TO DO THIS DUE TO A CLASH WITH GSAP SCROLL TRIGGER TRANSLATEY
+
+@keyframes top-about-hero-image-entrance {
+    0% {
+        opacity:0;
+        top: -2rem;
+    }
+    50% {
+        top: 1rem;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+} 
+
+
+@keyframes bottom-about-hero-image-entrance {
+    0% {
+        opacity:0;
+        bottom: -2rem;
+    }
+    50% {
+        bottom: 1rem;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+} 
+
+
+
+// FADE HERO CONTENT ON SCROLL 
+@keyframes heroFadeOut {
+  0%, 30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+

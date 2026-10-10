@@ -82,6 +82,9 @@
                             background: var.$clr-primary-darker;
                             height: 40px;
                             z-index: -1;
+                            @media screen and (max-width:var.$mobile) {
+                                height: 15px;
+                            }
                         }
                     }
                     

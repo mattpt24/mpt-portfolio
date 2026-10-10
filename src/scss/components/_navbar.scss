@@ -3,6 +3,7 @@
 
 
 #navbar {
+    transition: all .6s cubic-bezier(0.8, 0.03, 0.2, 1);
     padding: 2rem 0 1.4rem 0;
     position: fixed;
     top: 0;
@@ -12,8 +13,16 @@
     opacity: 0;
     animation: navbar-entrance 1s cubic-bezier(0.8, 0.03, 0.2, 1) forwards;
 
+
     @media screen and (max-width: var.$mobile) {
        padding: 1.2rem 0 .8rem 0;
+    }
+
+    &.navbar--scrolled {
+        transition: all .3s ease;
+        background: #ffffff;
+        background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 92%);
+        padding:.8rem 0;
     }
 
     .navbar-content {
