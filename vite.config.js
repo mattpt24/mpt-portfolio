@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import fs from 'fs'
 
-// Automatically find all .html files in the root folder
 function getHtmlEntries() {
   const entries = {}
   const files = fs.readdirSync(__dirname)
@@ -17,25 +16,27 @@ function getHtmlEntries() {
   return entries
 }
 
-export default defineConfig({
-  base: './', // Essential for GitHub Actions deployment
-  build: {
-    rollupOptions: {
-      input: getHtmlEntries(), // Automatically registers every .html file you add!
-    },
-  },
-  plugins: [
-    {
-      name: 'force-reload-html',
-      handleHotUpdate({ file, server }) {
-        // Whenever any .html file changes, force a full browser reload
-        if (file.endsWith('.html')) {
-          server.ws.send({
-            type: 'full-reload',
-            path: '*',
-          })
-        }
+export default defineConfig(({ command }) => {
+  return {
+    // Use '/' for local dev, and '/mpt-portfolio/' for production builds
+    base: command === 'build' ? '/mpt-portfolio/' : '/',
+    build: {
+      rollupOptions: {
+        input: getHtmlEntries(),
       },
     },
-  ],
+    plugins: [
+      {
+        name: 'force-reload-html',
+        handleHotUpdate({ file, server }) {
+          if (file.endsWith('.html')) {
+            server.ws.send({
+              type: 'full-reload',
+              path: '*',
+            })
+          }
+        },
+      },
+    ],
+  }
 })
