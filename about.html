@@ -22,6 +22,12 @@
     <!-- <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg" /> -->
 
 
+      <!-- FONT AWESOME  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- AOS  -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
       <!-- Favicon -->
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -93,11 +99,63 @@
         </section>
 
 
+
+
+        <section id="about-intro" class="has-observer">
+          <div class="about-intro-content width-container">
+
+            <div class="column text-side">
+                <h2 class="about-intro__heading mb-2" data-aos="fade-up" data-aos-delay="200"><span class="color-txt">Thank you</span> for checking out my site!</h2>
+                <p class="about-intro__body body-txt mb-1" data-aos="fade-up" data-aos-delay="400">I specialize in client-side web development, with a growing interest in server-side technologies. I'm passionate about creative design and thrive in collaborative team environments.</p>
+                <p class="about-intro__body body-txt mb-1" data-aos="fade-up" data-aos-delay="400">When i'm not building websites, i'm on my guitar, writing songs and playing live in my <a class="underline" href="https://youtube.com/ptmusicchannel" rel="noopener noreferrer" target="_blank" alt="Croft & Cotes Youtube Channel (opens in a new tab)">indie/folk duo with my twin brother.</a></p>
+                <p class="about-intro__body body-txt mb-3" data-aos="fade-up" data-aos-delay="500">Random fact: My favourite food is Fried Chicken. 🍗</p>
+                
+                
+                <section class="currently-learning mb-4" data-aos="fade-up" data-aos-delay="500">
+                  <p class="about-intro__body body-txt mb-1" data-aos="fade-in">Currently teaching myself</p>
+                  <ul class="currently-learning-list" data-aos="fade-in" aria-label="Technologies currently learning">
+                    <li class="currently-learning-list__item" data-aos="fade-in">React</li>
+                    <li class="currently-learning-list__item" data-aos="fade-in">Next.js</li>
+                    <li class="currently-learning-list__item" data-aos="fade-in">Typescript</li>
+                  </ul>
+                </section>
+
+
+                <section class="tech-stack">
+                     <h2 class="sr-only">Technologies</h2>
+                     <p class="body-txt mb-1 txt-balance" data-aos="fade-in">Some of the technologies I have worked with include:</p>
+                        <ul class="tech-stack-icons mb-2" data-aos="fade-in" data-aos-delay="200">
+                          <li class="tech-stack-icon"><i class="fa-brands fa-html5"></i>HTML</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-css"></i>CSS</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-square-js"></i>Javascipt</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-sass"></i>SASS</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-react"></i>React</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-gulp"></i>Gulp</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-git-alt"></i>Git</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-github"></i>Github</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-wordpress"></i>WordPress</li>
+                          <li class="tech-stack-icon"><i class="fa-brands fa-php"></i>PHP</li>
+                          <li class="tech-stack-icon"><i class="fa-solid fa-cloud-arrow-up"></i>RESTful API</li>
+                          <li class="tech-stack-icon"><i class="fa-solid fa-database"></i>MongoDB</li>
+                        </ul>
+                        <a class="tech-stack__portfolio-btn" href="">View My Work</a>
+                </section>
+            </div>
+
+
+            <div class="column image-side">
+                <img class="about-intro__img" src="./src/assets/images/me-jumping.webp" alt="Me jumping off a rock with Snowdonia mountain background">
+            </div>
+
+          </div>
+        </section>
+
+
     </main>
 
 
 
-    <div style="height:100vh; background:black"></div>
+    <div style="height:50vh; background:black"></div>
 
 
 
@@ -106,6 +164,17 @@
             <!-- Load GSAP FIRST -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+      duration: 600, 
+      once: true, 
+      delay: 0, 
+      easing: 'cubic-bezier(0.8, 0.03, 0.2, 1)' 
+    });
+    </script>
+
 
     <script src="/src/js/script.js" type="module"></script>
   </body>

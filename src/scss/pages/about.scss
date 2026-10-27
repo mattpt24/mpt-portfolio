@@ -223,3 +223,140 @@
   }
 }
 
+
+
+
+
+
+
+#about-intro {
+
+    .about-intro-content {
+        @include mixin.grid(1fr 1fr, 6rem);
+
+        @media screen and (max-width:var.$tablet) {
+            grid-gap: 4rem;
+        }
+        @media screen and (max-width:var.$mobile) {
+            grid-template-columns: 1fr;
+        }
+
+        .column {
+            position: relative;
+            overflow: hidden;
+
+        &.text-side {
+
+        .about-intro__heading {
+            font-size: 3.2vw;
+
+            @media screen and (max-width: var.$desktop) {
+                font-size: 3.8vw;
+            }
+            @media screen and (max-width: var.$laptop) {
+                font-size: 4vw;
+            }
+            @media screen and (max-width:var.$mobile) {
+                font-size: 2rem;
+            }
+        }
+
+        .currently-learning-list {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            list-style: none;
+
+            .currently-learning-list__item {
+                transition: all .3s ease;
+                background: rgb(31, 31, 31);
+                padding: 1rem 1.2rem;
+                border-radius: 50px;
+                font-size: .9rem;
+
+                &:hover {
+                    background: var.$clr-primary;
+                }
+            }
+        }
+
+
+
+        .tech-stack {
+            .tech-stack-icons {
+                @include mixin.grid(1fr 1fr 1fr, 1rem);
+                list-style: none;
+
+                @media screen and (max-width:var.$mobile) {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .tech-stack-icon {
+                   transition: background 2s ease .5s;
+                   background: rgb(31, 31, 31);
+                   border-radius: 20px;
+                   height: 120px;
+                   @include mixin.flex-center;
+                   flex-direction: column;
+                   gap: 1rem;
+
+                   &:hover {
+                    transition: all .2s ease;
+                    background: var.$clr-primary;
+                   }
+
+                   i {
+                    font-size: 1.6rem;
+                   }
+                }
+            }
+             
+            .tech-stack__portfolio-btn {
+                transition: all .2s ease;
+                background: var.$clr-primary;
+                width: 100%;
+                display: block;
+                padding: 1.6rem;
+                border-radius: 20px;
+                text-align: center;
+
+                &:hover {
+                    background: var.$clr-primary-darker;
+                }
+            }
+        }
+        
+        }
+
+
+        &.image-side {
+            border-radius: 30px;
+
+            @media screen and (max-width:var.$mobile) {
+                height: 300px;
+            }
+            
+            .about-intro__img {
+                transform: translateY(100px);
+                @include mixin.image-full-cover;
+                transform: scale(1.2);
+            }
+        }
+
+
+        }
+
+
+    }
+
+}
+
+
+
+
+&.active {
+
+    .about-intro__heading {
+        display:none!important;
+    }
+}

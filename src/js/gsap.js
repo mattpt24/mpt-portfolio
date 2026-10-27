@@ -30,3 +30,17 @@ gsap.to(".about-hero__img", {
 });
 
 
+
+
+gsap.to(".about-intro__img", {
+  y: -100,
+  scale: 1.8,
+  ease: "power2.in",
+  scrollTrigger: {
+    trigger: "#about-intro",
+    start: "top bottom",
+    scrub: 1
+  }
+});
+
+

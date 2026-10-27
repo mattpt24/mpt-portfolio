@@ -49,6 +49,7 @@
 .text-align-center {text-align: center;}
 .flip {transform: rotate(180deg);}
 .txt-balance {text-wrap: balance;}
+.underline {text-decoration: underline;}
 
 
 
@@ -107,9 +108,9 @@
     font-size: 1.2rem;
     line-height: 1.6;
     font-weight: var.$fw-1;
-
+    color: rgba(255,255,255,.75);
     @media screen and (max-width: var.$laptop) { 
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 
@@ -189,3 +190,7 @@
         }
     }
 }
+
+
+
+/* Reduce starting offset from 100px to 20px globally */
